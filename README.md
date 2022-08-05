@@ -5,7 +5,7 @@
 For start up this project, please, follow the instruction bellow:
 > 1. Clone the project
 
-> 2. Create in your **.m2** (Windows example of this folder *C:\Users\Pavlo_Khshanovskyi\.m2*) folder **setting.xml** file
+> 2. Create in your **.m2** (Windows example of this folder *C:\Users\user\.m2*) folder **setting.xml** file
 
 > 3. Add to **setting.xml** ->
 ```
@@ -41,16 +41,20 @@ For start up this project, please, follow the instruction bellow:
     <server>
         <id>github</id>
         <username>your_github_email</username>
-        <password>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</password>
+        <password>bring_token</password>
     </server>
 </servers>
 </settings>             
 ``` 
 > 4. Replace *your_github_email* in this file on your email from the GitHub account
 
-> 5. Build the project.
+> 5. Contact Bring team and ask a token for downloading dependency.
 
-> 6. Setup Tomcat with version not less than 10
+> 6. Replace *bring_token* on provided from Bring team.
+
+> 7. Build the project.
+
+> 8. Setup Tomcat with version not less than 10
 <details>
 <summary> screenshots: </summary> 
 
@@ -58,4 +62,4 @@ For start up this project, please, follow the instruction bellow:
 > ![Screenshot 2022-08-05 100956](https://user-images.githubusercontent.com/55089853/183022290-e0447ccf-72b7-470a-975e-34fad2d6f07c.png)
 </details>
 
-> 7. Start server.
+> 9. Start server.
