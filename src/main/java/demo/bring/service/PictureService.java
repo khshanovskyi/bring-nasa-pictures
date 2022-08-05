@@ -27,10 +27,22 @@ public class PictureService {
     private EntityRepository<Photo> photoRepository;
 
 
+    /**
+     * Provides {@link List} with {@link Photo} saved on the DB.
+     *
+     * @return {@link List} with {@link Photo}
+     */
     public List<Photo> getAllFromDB() {
         return photoRepository.getAll();
     }
 
+    /**
+     * Firstly is looking got in the DB, if in the DB no records with provided {@param sol} then searching url with
+     * max 'content-length', save it to BD and return the result.
+     *
+     * @param sol number of the Mars sol
+     * @return {@link String} with url to the largest picture
+     */
     @SneakyThrows
     public String getLargestPictureUrl(String sol) {
         Photo photo = photoRepository.getById(Long.valueOf(sol));

@@ -2,6 +2,11 @@ package demo.bring.repository;
 
 import java.util.List;
 
+/**
+ * Simple generalized contract for working with DB.
+ *
+ * @param <T> type of entity
+ */
 public interface EntityRepository<T> {
 
     T save(T entity);

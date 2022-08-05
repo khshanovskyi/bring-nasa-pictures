@@ -11,6 +11,9 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * Simple Web controller.
+ */
 @WebServlet("/nasa/picture/largest")
 public class NasaController extends HttpServlet {
     private PictureService pictureService;

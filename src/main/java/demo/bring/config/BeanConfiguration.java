@@ -10,9 +10,17 @@ import org.hibernate.service.ServiceRegistry;
 
 import java.util.Properties;
 
+/**
+ * Configuration class that contains preconfigured beans.
+ */
 @Configuration
 public class BeanConfiguration {
 
+    /**
+     * Provides {@link SessionFactory} with configuration fo the H2 database.
+     *
+     * @return preconfigured {@link SessionFactory}
+     */
     @Bean
     public static SessionFactory getSessionFactory() {
         SessionFactory sessionFactory = null;
