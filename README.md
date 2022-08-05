@@ -5,7 +5,14 @@
 For start up this project, please, follow the instruction bellow:
 > 1. Clone the project
 
-> 2. Create in your **.m2** (Windows example of this folder *C:\Users\user\.m2*) folder **setting.xml** file
+> 2. Create in your **.m2** (Windows example of this folder *C:\Users\user\.m2*) folder **setting.xml** file. If already
+> exist than go the point 3
+
+<details>
+<summary> screenshot: </summary> 
+
+![Screenshot 2022-08-06 004753](https://user-images.githubusercontent.com/55089853/183218865-51f58f05-22dd-4a96-9237-8b114362eaeb.png)
+</details>
 
 > 3. Add to **setting.xml** ->
 ```
@@ -48,7 +55,7 @@ For start up this project, please, follow the instruction bellow:
 ``` 
 > 4. Replace *your_github_email* in this file on your email from the GitHub account
 
-> 5. Contact Bring team and ask a token for downloading dependency.
+> 5. [Contact Bring team and ask a token for downloading dependency](https://github.com/khshanovskyi/get_token/blob/main/README.md)
 
 > 6. Replace *bring_token* on provided from Bring team.
 
@@ -63,3 +70,12 @@ For start up this project, please, follow the instruction bellow:
 </details>
 
 > 9. Start server.
+
+> 10. When server start, then in browser run this:
+```
+http://localhost:8080/nasa/picture/largest?sol=15
+```
+and this
+```
+http://localhost:8080/nasa/picture/largest
+```

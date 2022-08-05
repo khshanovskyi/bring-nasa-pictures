@@ -97,7 +97,7 @@ public class PictureService {
 
     private String generateUrl(String sol) {
         return "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" + sol +
-                "&api_key=A8TWOxIOLYey639GppGaUsthUE3etmlDlYr1MfbS";
+                "&api_key=E1qL4IdUk3v4DhiqY0RrukVQ68a2lxG7ua75KDiN";
     }
 
 }
