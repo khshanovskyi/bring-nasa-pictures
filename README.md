@@ -41,7 +41,7 @@ For start up this project, please, follow the instruction bellow:
     <server>
         <id>github</id>
         <username>your_github_email</username>
-        <password>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</password>
+        <password>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</password>
     </server>
 </servers>
 </settings>             
