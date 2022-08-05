@@ -44,10 +44,9 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <finalName>bring-nasa-pictures</finalName>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+        <pluginManagement>
             <plugins>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>

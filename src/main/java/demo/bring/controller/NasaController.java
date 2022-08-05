@@ -24,20 +24,26 @@ public class NasaController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        var sol = req.getParameter("sol");
-        if (Objects.nonNull(sol) && StringUtils.isNotEmpty(sol)) {
-            resp.sendRedirect(pictureService.getLargestPictureUrl(sol));
-        } else {
-            resp.getWriter().println("<h1>Your request doesn't contains <b>sol</b> parameter.</h1>");
-            resp.getWriter().println("<h1>So, you can choose among other big pictures urls that exists in DB:</h1>");
-            resp.getWriter().println();
-            pictureService.getAllFromDB().forEach(photo -> {
-                try {
-                    resp.getWriter().println("<b><a href=\"" + photo.getUrl() + "\">" + "sol " + photo.getSol() + "</a></b>\n");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+        try {
+            var sol = req.getParameter("sol");
+            if (Objects.nonNull(sol) && StringUtils.isNotEmpty(sol)) {
+                resp.sendRedirect(pictureService.getLargestPictureUrl(sol));
+            } else {
+                resp.getWriter().println("<h1>Your request doesn't contains <b>sol</b> parameter.</h1>");
+                resp.getWriter().println("<h1>So, you can choose among other big pictures urls that exists in DB:</h1>");
+                resp.getWriter().println();
+                pictureService.getAllFromDB().forEach(photo -> {
+                    try {
+                        resp.getWriter().println("<b><a href=\"" + photo.getUrl() + "\">" + "sol " + photo.getSol() + "</a></b>\n");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            }
+        } catch (Exception exception) {
+            resp.getWriter().println("<h1>Oops... Something went wrong!</h1>");
+            resp.getWriter().println(exception.getMessage());
         }
+
     }
 }
