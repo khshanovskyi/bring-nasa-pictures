@@ -33,15 +33,22 @@ public class NasaController extends HttpServlet {
                 resp.sendRedirect(pictureService.getLargestPictureUrl(sol));
             } else {
                 resp.getWriter().println("<h1>Your request doesn't contains <b>sol</b> parameter.</h1>");
-                resp.getWriter().println("<h1>So, you can choose among other big pictures urls that exists in DB:</h1>");
                 resp.getWriter().println();
-                pictureService.getAllFromDB().forEach(photo -> {
-                    try {
-                        resp.getWriter().println("<b><a href=\"" + photo.getUrl() + "\">" + "sol " + photo.getSol() + "</a></b>\n");
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                });
+
+                var allFromDB = pictureService.getAllFromDB();
+                if (!allFromDB.isEmpty()) {
+                    resp.getWriter().println("<h1>So, you can choose among other big pictures urls that exists in DB:</h1>");
+                    allFromDB.forEach(photo -> {
+                        try {
+                            resp.getWriter().println("<b><a href=\"" + photo.getUrl() + "\">" + "sol " + photo.getSol() + "</a></b>\n");
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
+                } else {
+                    resp.getWriter().println("<h1>Please, add to request a sol param, like '/nasa/picture/largest<b>?sol=15</b>'</h1>");
+                }
+
             }
         } catch (Exception exception) {
             resp.getWriter().println("<h1>Oops... Something went wrong!</h1>");
